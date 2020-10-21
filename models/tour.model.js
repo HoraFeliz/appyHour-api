@@ -1,5 +1,4 @@
-const Place = require("./place.model");
-
+const mongoose = require("mongoose");
 const tourSchema = new mongoose.Schema(
   {
     name: {
@@ -31,7 +30,7 @@ const tourSchema = new mongoose.Schema(
     creator: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      //required: true,
     },
     // TO DO: Comprobacion de que el placeId debe ser unique
     places: {
@@ -62,3 +61,5 @@ tourSchema.post("remove", function (next) {
 });
 
 const Tour = mongoose.model("Tour", tourSchema);
+
+module.exports = Tour;
