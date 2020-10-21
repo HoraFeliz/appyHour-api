@@ -13,5 +13,11 @@ router.get("/", baseController.index);
 router.post("/login", userController.login);
 router.get("/logout", authMiddleware.isAuthenticated, userController.logout);
 
-// Routes
+// Tours
 router.post("/tour/new", authMiddleware.isAuthenticated, tourController.create);
+router.get("/tour/list", authMiddleware.isAuthenticated, tourController.list);
+router.delete(
+  "/tour/:id",
+  authMiddleware.isAuthenticated,
+  tourController.delete
+);
