@@ -1,92 +1,64 @@
-const Place = require("./place.model");
-const Tour = require("./tour.model");
-const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
-
+const bcrypt = require("bcrypt");
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-const generateRandomToken = () => {
-  const characters =
-    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let token = "";
-  for (let i = 0; i < 25; i++) {
-    token += characters[Math.floor(Math.random() * characters.length)];
-  }
-  return token;
-};
+const SALT_WORK_FACTOR = 10;
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      required: [true, "Name is required"],
-      minlength: [3, "Name needs at last 3 chars"],
-      trim: true,
-    },
     email: {
       type: String,
       required: [true, "Email is required"],
-      unique: true,
-      trim: true,
-      lowercase: true,
-      match: [EMAIL_PATTERN, "Email is invalid"],
-    },
-    avatar: {
-      type: String,
+      match: [EMAIL_PATTERN, "Email is not valid"],
     },
     password: {
       type: String,
-      minlength: [8, "password min length is 8"],
+      required: [true, "Password is required"],
+      minlength: [10, "Password must have 10 characters or more"],
     },
-    role: {
-      type: [String],
-      default: "user",
-    },
-    activation: {
-      active: {
-        type: Boolean,
-        default: false,
-      },
-      token: {
-        type: String,
-        default: generateRandomToken,
-      },
-    },
-    tours: {
-      type: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Tour",
-        },
-      ],
-    },
-    googleId: {
+    name: {
       type: String,
+      required: [true, "Name is required"],
+    },
+    image: String,
+    address: {
+      type: String,
+      required: [true, "Address is required"],
     },
   },
-  { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: (document, toReturn) => {
+        toReturn.id = document._id;
+        delete toReturn.password;
+        delete toReturn.__v;
+        delete toReturn._id;
+        delete toReturn.createdAt;
+        delete toReturn.updatedAt;
+        return toReturn;
+      },
+    },
+  }
 );
 
-userSchema.virtual("places", {
-  ref: "Place",
-  localField: "_id",
-  foreignField: "author",
-  justOne: false,
-});
-
 userSchema.pre("save", function (next) {
-  if (this.isModified("password")) {
-    bcrypt.hash(this.password, 10).then((hash) => {
-      this.password = hash;
-      next();
-    });
+  const user = this;
+
+  if (user.isModified("password")) {
+    // Hash password
+    bcrypt
+      .genSalt(SALT_WORK_FACTOR)
+      .then((salt) => {
+        return bcrypt.hash(user.password, salt).then((hash) => {
+          user.password = hash;
+          next();
+        });
+      })
+      .catch((e) => next(e));
   } else {
     next();
   }
-});
-
-userSchema.post("remove", function (next) {
-  Promise.all([Place.deleteMany({ author: this._id })]).then(next);
 });
 
 userSchema.methods.checkPassword = function (password) {
