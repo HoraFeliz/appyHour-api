@@ -17,7 +17,7 @@ router.get("/logout", authMiddleware.isAuthenticated, userController.logout);
 router.post("/tour/new", authMiddleware.isAuthenticated, tourController.create);
 router.get("/tour/list", authMiddleware.isAuthenticated, tourController.list);
 router.delete(
-  "/tour/:id",
+  "/tour/delete/:id",
   authMiddleware.isAuthenticated,
   tourController.delete
 );

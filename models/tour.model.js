@@ -29,8 +29,8 @@ const tourSchema = new mongoose.Schema(
     },
     creator: {
       type: mongoose.Schema.Types.ObjectId,
+      required: true,
       ref: "User",
-      //required: true,
     },
     // TO DO: Comprobacion de que el placeId debe ser unique
     places: {
