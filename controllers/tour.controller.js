@@ -5,7 +5,7 @@ const createError = require("http-errors");
 module.exports.create = (req, res, next) => {
   const tour = new Tour({
     ...req.body,
-    creator: req.session.user.id,
+    // creator: req.session.user.id,
   });
 
   tour

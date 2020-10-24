@@ -29,7 +29,7 @@ const tourSchema = new mongoose.Schema(
     },
     creator: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      //required: true,
       ref: "User",
     },
     // TO DO: Comprobacion de que el placeId debe ser unique
