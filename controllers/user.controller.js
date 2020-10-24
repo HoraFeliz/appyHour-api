@@ -1,5 +1,42 @@
 const createError = require("http-errors");
-const User = require("../models/User.model");
+const passport = require("passport");
+
+module.exports.doGoogleLogin = (req, res, next) => {
+  const passportController = passport.authenticate(
+    "google",
+    {
+      scope: [
+        "https://www.googleapis.com/auth/userinfo.profile",
+        "https://www.googleapis.com/auth/userinfo.email",
+      ],
+    },
+    (error, user) => {
+      if (error) {
+        next(error);
+      } else {
+        req.session.userId = user._id;
+        res.redirect("/");
+      }
+    }
+  );
+
+  passportController(req, res, next);
+};
+
+module.exports.googleCallback = (req, res, next) => {
+  const passportGoogleCallback = passport.authenticate(
+    "google",
+    {
+      successRedirect: "/tours",
+      failureRedirect: "/login",
+    },
+    (error, user) => {
+      req.session.userId = user._id;
+      res.redirect("/");
+    }
+  );
+  passportGoogleCallback(req, res, next);
+};
 
 module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
