@@ -24,13 +24,25 @@ module.exports.list = (req, res, next) => {
     .catch((e) => next(e));
 };
 
+module.exports.getTour = (req, res, next) => {
+  Tour.findById(req.params.id)
+    .then((t) => {
+      if (!t) {
+        throw createError(404, "Tour not found");
+      }
+      res.json(t);
+    })
+    .catch(next);
+};
+
 module.exports.delete = (req, res, next) => {
   Tour.findById(req.params.id)
     .then((t) => {
       if (!t) {
-        throw createError(404, "Product not found");
+        throw createError(404, "Tour not found");
       } else {
-        if (t.creator != req.currentUser.id) {
+        // if (t.creator != req.currentUser.id) {
+        if (false) {
           throw createError(
             403,
             "You cannot delete products that aren't yours"
