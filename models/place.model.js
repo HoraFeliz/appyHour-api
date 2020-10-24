@@ -7,6 +7,10 @@ const placeSchema = new mongoose.Schema(
       required: [true, "Place title is required"],
       trim: true,
     },
+    city: {
+      type: String,
+      trim: true,
+    },
     description: {
       type: String,
       trim: true,
@@ -17,13 +21,13 @@ const placeSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      required: [true, "Image is required"],
+      //required: [true, "Image is required"],
     },
     // TO DO: Vamos a incluir creator en el place????
     creator: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      //required: true,
     },
     openingHours: {
       type: [String],
@@ -37,6 +41,10 @@ const placeSchema = new mongoose.Schema(
     location: {
       type: { type: String },
       coordinates: [Number],
+    },
+    geometry: {
+      longitude: String,
+      latitude: String,
     },
     recommended: {
       type: Boolean,
@@ -53,3 +61,5 @@ const placeSchema = new mongoose.Schema(
 );
 
 const Place = mongoose.model("Place", placeSchema);
+
+module.exports = Place;
