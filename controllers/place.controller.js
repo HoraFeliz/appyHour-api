@@ -1,4 +1,5 @@
 const Place = require("../models/place.model");
+const Tour = require("../models/tour.model");
 const User = require("../models/user.model");
 
 module.exports.save = (req, res, next) => {
@@ -22,4 +23,51 @@ module.exports.save = (req, res, next) => {
         next(error);
       }
     });
+};
+
+module.exports.getPlaces = (req, res, next) => {
+  Tour.findById(req.params.id)
+    .populate("places")
+    .then((t) => {
+      if (t) {
+        //const placesInTour = tour.places;
+        res.json(t);
+      } else {
+        console.log("Couldn´t update tour with list of places");
+      }
+    })
+    .catch(next);
+};
+
+// GET /places/:id
+module.exports.getPlace = (req, res, next) => {
+  Place.findById(req.params.id)
+    .populate("creator")
+    .then((p) => {
+      res.json(p);
+    })
+    .catch(next);
+};
+
+module.exports.delete = (req, res, next) => {
+  const tourId = req.body.tourId;
+  Place.findByIdAndDelete(req.params.place).then((places) => {
+    Tour.findByIdAndUpdate(
+      tourId,
+      {
+        $pull: { places: req.params.place },
+      },
+      { runValidators: true, new: true, useFindAndModify: false }
+    )
+      .populate("places")
+      .then((tour) => {
+        if (tour) {
+          // res.redirect(`/tours/form-2/added/${tour.id}`);
+          res.json(tour);
+        } else {
+          console.log("Couldn´t update tour with list of places");
+        }
+      })
+      .catch(next);
+  });
 };

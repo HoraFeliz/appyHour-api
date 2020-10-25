@@ -1,5 +1,4 @@
 const Tour = require("../models/tour.model");
-const mongoose = require("mongoose");
 const createError = require("http-errors");
 
 module.exports.create = (req, res, next) => {
@@ -26,6 +25,7 @@ module.exports.list = (req, res, next) => {
 
 module.exports.getTour = (req, res, next) => {
   Tour.findById(req.params.id)
+    .populate("places")
     .then((t) => {
       if (!t) {
         throw createError(404, "Tour not found");
