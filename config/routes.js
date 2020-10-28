@@ -36,7 +36,7 @@ router.delete("/tour/delete/:id", tourController.delete);
 
 // Places
 router.post("/place/new", placeController.save);
-router.get("/places", placeController.getPlaces);
+router.get("/places/:id", placeController.getPlaces);
 router.get("/place", placeController.getPlace);
 // tour and place id???
 router.post("/place/delete/:id", placeController.delete);

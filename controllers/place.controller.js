@@ -26,7 +26,8 @@ module.exports.save = (req, res, next) => {
 };
 
 module.exports.getPlaces = (req, res, next) => {
-  Tour.findById(req.params.id)
+  const tourId = req.params.id;
+  Tour.findById(tourId)
     .populate("places")
     .then((t) => {
       if (t) {
