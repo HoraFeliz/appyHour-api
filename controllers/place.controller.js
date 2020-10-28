@@ -32,12 +32,20 @@ module.exports.getPlaces = (req, res, next) => {
     .then((t) => {
       if (t) {
         //const placesInTour = tour.places;
-        res.json(t);
+        res.json(t.places);
       } else {
         console.log("Couldn´t update tour with list of places");
       }
     })
     .catch(next);
+};
+
+module.exports.list = (req, res, next) => {
+  Place.find()
+    .then((places) => {
+      res.json(places);
+    })
+    .catch((e) => next(e));
 };
 
 // GET /places/:id
