@@ -11,6 +11,9 @@ const placeSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    address: {
+      type: String,
+    },
     description: {
       type: String,
       trim: true,
@@ -53,6 +56,10 @@ const placeSchema = new mongoose.Schema(
     googleId: {
       type: String,
     },
+    googleId: {
+      type: String,
+    },
+    openingHours: [String],
     tags: [String],
     rating: Number,
     priceLevel: Number,

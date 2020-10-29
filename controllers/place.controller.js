@@ -3,8 +3,12 @@ const Tour = require("../models/tour.model");
 const User = require("../models/user.model");
 
 module.exports.save = (req, res, next) => {
+  const placeFromApi = req.body;
   const place = new Place({
-    ...req.body,
+    ...placeFromApi,
+    openingHours: placeFromApi.opening_hours.weekday_text,
+    address: placeFromApi.formatted_address,
+    priceLevel: placeFromApi.price_level,
   });
 
   place
