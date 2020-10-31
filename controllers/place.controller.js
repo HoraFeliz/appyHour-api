@@ -3,6 +3,7 @@ const Tour = require("../models/tour.model");
 const User = require("../models/user.model");
 
 module.exports.save = (req, res, next) => {
+  const tourId = req.params.id;
   const placeFromApi = req.body;
   const place = new Place({
     ...placeFromApi,
@@ -14,6 +15,17 @@ module.exports.save = (req, res, next) => {
   place
     .save()
     .then((p) => {
+      //Tour.findByIdAndUpdate();
+      Tour.findByIdAndUpdate(
+        tourId,
+        {
+          $push: { places: p },
+        },
+        { runValidators: true, new: true, useFindAndModify: false }
+      ).then((tour) => {
+        console.log("tour", tour);
+      });
+
       res.json(p);
     })
     .catch((error) => {
@@ -55,7 +67,6 @@ module.exports.list = (req, res, next) => {
 // GET /places/:id
 module.exports.getPlace = (req, res, next) => {
   Place.findById(req.params.id)
-    .populate("creator")
     .then((p) => {
       if (!p) {
         throw createError(404, "Tour not found");

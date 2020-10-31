@@ -40,6 +40,7 @@ const tourSchema = new mongoose.Schema(
           ref: "Place",
         },
       ],
+      // unique: true,
     },
   },
   {

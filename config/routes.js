@@ -35,7 +35,7 @@ router.get("/tour/:id", tourController.getTour);
 router.delete("/tour/delete/:id", tourController.delete);
 
 // Places
-router.post("/place/new", placeController.save);
+router.post("/place/new/:id", placeController.save);
 router.get("/places/:id", placeController.getPlaces);
 router.get("/place", placeController.getPlace);
 router.get("/places", placeController.list);
