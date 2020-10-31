@@ -15,7 +15,6 @@ module.exports.save = (req, res, next) => {
   place
     .save()
     .then((p) => {
-      //Tour.findByIdAndUpdate();
       Tour.findByIdAndUpdate(
         tourId,
         {

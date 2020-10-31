@@ -8,8 +8,9 @@ const tourSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      required: [true, "Tour description is required"],
       trim: true,
+      default:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maiores.",
     },
     city: {
       type: String,
