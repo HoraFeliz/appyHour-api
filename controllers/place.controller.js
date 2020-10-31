@@ -57,6 +57,9 @@ module.exports.getPlace = (req, res, next) => {
   Place.findById(req.params.id)
     .populate("creator")
     .then((p) => {
+      if (!p) {
+        throw createError(404, "Tour not found");
+      }
       res.json(p);
     })
     .catch(next);
