@@ -31,6 +31,8 @@ router.get("/logout", authMiddleware.isAuthenticated, userController.logout);
 // Tours
 router.post("/tour/new", tourController.create);
 router.get("/tour/list", tourController.list);
+router.get("/tour/list/recommended", tourController.listRecommended);
+router.get("/tour/list/regular", tourController.listRegular);
 router.get("/tour/:id", tourController.getTour);
 router.delete("/tour/delete/:id", tourController.delete);
 

@@ -23,6 +23,22 @@ module.exports.list = (req, res, next) => {
     .catch((e) => next(e));
 };
 
+module.exports.listRegular = (req, res, next) => {
+  Tour.find({ recommended: false })
+    .then((tours) => {
+      res.json(tours);
+    })
+    .catch((e) => next(e));
+};
+
+module.exports.listRecommended = (req, res, next) => {
+  Tour.find({ recommended: true })
+    .then((tours) => {
+      res.json(tours);
+    })
+    .catch((e) => next(e));
+};
+
 module.exports.getTour = (req, res, next) => {
   Tour.findById(req.params.id)
     .populate("places")
