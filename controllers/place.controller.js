@@ -17,9 +17,14 @@ module.exports.save = (req, res, next) => {
     .then((p) => {
       Tour.findByIdAndUpdate(
         tourId,
-        {
-          $push: { places: p },
-        },
+        { $push: { places: p } },
+        { runValidators: true, new: true, useFindAndModify: false }
+      ).then((tour) => {
+        console.log("tour", tour);
+      });
+      Tour.findByIdAndUpdate(
+        tourId,
+        { $set: { image: p.image } },
         { runValidators: true, new: true, useFindAndModify: false }
       ).then((tour) => {
         console.log("tour", tour);

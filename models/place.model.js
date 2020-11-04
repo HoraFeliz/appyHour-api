@@ -53,6 +53,9 @@ const placeSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    placeId: {
+      type: String,
+    },
     googleId: {
       type: String,
     },
