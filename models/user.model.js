@@ -3,27 +3,47 @@ const bcrypt = require("bcrypt");
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 const SALT_WORK_FACTOR = 10;
 
+const generateRandomToken = () => {
+  const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let token = '';
+  for (let i = 0; i < 25; i++) {
+    token += characters[Math.floor(Math.random() * characters.length)];
+  }
+  return token;
+}
+
 const userSchema = new mongoose.Schema(
   {
     email: {
       type: String,
       required: [true, "Email is required"],
+      unique: true,
+      trim: true,
+      lowercase: true,
       match: [EMAIL_PATTERN, "Email is not valid"],
     },
     password: {
       type: String,
       required: [true, "Password is required"],
-      minlength: [10, "Password must have 10 characters or more"],
+      minlength: [8, "Password must have 8 characters or more"],
     },
     name: {
       type: String,
-      required: [true, "Name is required"],
     },
     image: String,
     address: {
-      type: String,
-      required: [true, "Address is required"],
+      type: String
     },
+    activation: {
+      active: {
+        type: Boolean,
+        default: false
+      },
+      token: {
+        type: String,
+        default: generateRandomToken
+      }
+    }
   },
   {
     timestamps: true,

@@ -13,17 +13,10 @@ module.exports = router;
 
 router.get("/", baseController.index);
 
-// Authentication
-router.get(
-  "/auth/google",
-  //session.isNotAuthenticated,
-  userController.doGoogleLogin
-);
-router.get(
-  "/auth/google/callback",
-  //session.isNotAuthenticated,
-  userController.googleCallback
-);
+router.post("/user/add", userController.googleLogin);
+router.post('/user/create', userController.create);
+router.get('/activate/:token', userController.activateUser);
+
 
 router.post("/login", userController.login);
 router.get("/logout", authMiddleware.isAuthenticated, userController.logout);
