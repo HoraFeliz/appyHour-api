@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 require("./config/db.config");
 const passportConfig = require("./config/passport.config");
 const session = require("./config/session.config");
-const cors = require("./config/cors.config");
+// const cors = require("./config/cors.config");
 
 
 /**
