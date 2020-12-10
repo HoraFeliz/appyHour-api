@@ -11,23 +11,7 @@ const tourController = require("../controllers/tour.controller");
 
 module.exports = router;
 
-router.get("/", baseController.index);
-
-// Authentication
-router.get(
-  "/auth/google",
-  //session.isNotAuthenticated,
-  userController.doGoogleLogin
-);
-router.get(
-  "/auth/google/callback",
-  //session.isNotAuthenticated,
-  userController.googleCallback
-);
-
-router.post("/login", userController.login);
-router.get("/logout", authMiddleware.isAuthenticated, userController.logout);
-
+router.post("/user/add", userController.doGoogleLogin);
 // Tours
 router.post("/tour/new", tourController.create);
 router.get("/tour/list", tourController.list);
