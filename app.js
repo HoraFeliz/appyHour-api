@@ -10,21 +10,21 @@ const mongoose = require("mongoose");
 require("./config/db.config");
 const passportConfig = require("./config/passport.config");
 const session = require("./config/session.config");
-const cors = require("./config/cors.config");
+// const cors = require("./config/cors.config");
 
 /**
  * Configure express
  */
 const app = express();
-app.use(cors);
+// app.use(cors);
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin: *");
   res.header(
-    "Access-Control-Allow-Headers",
-    "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method"
+    "Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS"
   );
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+  res.header(
+    "Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token"
+  );
   next();
 });
 
