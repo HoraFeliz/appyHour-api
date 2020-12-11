@@ -17,8 +17,15 @@ const session = require("./config/session.config");
  */
 const app = express();
 // app.use(cors);
+const allowedOrigin = process.env.CORS_ORIGIN || "http://localhost:3000";
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin: *");
+  res.header(`Access-Control-Allow-Origin: ${allowedOrigin}`);
+  res.header(
+    "Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS"
+  );
+  res.header(
+    "Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token"
+  );
   res.header(
     "Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS"
   );
