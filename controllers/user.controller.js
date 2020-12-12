@@ -70,12 +70,10 @@ module.exports.logout = (req, res, next) => {
 };
 
 module.exports.create = (req, res, next) => {
-	console.log(req.body);
 	const user = new User({
 		email: req.body.email,
 		password: req.body.password
   });
-  	console.log(user)
 
 	user
 		.save()
