@@ -19,7 +19,7 @@ router.get('/activate/:token', userController.activateUser);
 
 
 router.post("/login", userController.login);
-router.get("/logout", authMiddleware.isAuthenticated, userController.logout);
+router.post("/logout", authMiddleware.isAuthenticated, userController.logout);
 
 // Tours
 router.post("/tour/new", tourController.create);
