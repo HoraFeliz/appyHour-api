@@ -65,8 +65,6 @@ const placeSchema = new mongoose.Schema(
     openingHours: [String],
     tags: [String],
     rating: Number,
-    tags: [String],
-    rating: Number,
     priceLevel: Number,
   },
   { timestamps: true }

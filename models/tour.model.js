@@ -43,6 +43,10 @@ const tourSchema = new mongoose.Schema(
       ],
       // unique: true,
     },
+    travel : [{
+      time : String,
+      distance : String
+    }] 
   },
   {
     toJSON: { virtuals: true },
