@@ -24,7 +24,7 @@ const placeSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      //required: [true, "Image is required"],
+      default: "/img/default-img-tour.png",
     },
     // TO DO: Vamos a incluir creator en el place????
     creator: {
