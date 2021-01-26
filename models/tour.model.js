@@ -22,7 +22,7 @@ const tourSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      default: "/img/tour-def-icon.svg",
+      default: "/img/default-img-tour.png",
     },
     recommended: {
       type: Boolean,
@@ -43,10 +43,10 @@ const tourSchema = new mongoose.Schema(
       ],
       // unique: true,
     },
-    travel : [{
-      time : String,
-      distance : String
-    }] 
+    travel: [{
+      time: String,
+      distance: String
+    }]
   },
   {
     toJSON: { virtuals: true },
