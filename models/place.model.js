@@ -34,12 +34,13 @@ const placeSchema = new mongoose.Schema(
     },
     openingHours: {
       type: [String],
+      default : "Sin horario"
     },
 
     city: {
       type: String,
       trim: true,
-      required: true,
+      //required: true,
     },
     location: {
       type: { type: String },
