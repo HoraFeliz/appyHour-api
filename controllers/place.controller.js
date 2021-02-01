@@ -1,4 +1,4 @@
-const Place = require("../models/place.model.js.bk");
+const Place = require("../models/place.model.js");
 const Tour = require("../models/tour.model");
 const User = require("../models/user.model");
 
@@ -6,10 +6,7 @@ module.exports.save = (req, res, next) => {
   const tourId = req.params.id;
   const placeFromApi = req.body;
   const place = new Place({
-    ...placeFromApi,
-    openingHours: placeFromApi.opening_hours.weekday_text,
-    address: placeFromApi.formatted_address,
-    priceLevel: placeFromApi.price_level,
+    ...placeFromApi
   });
 
   place

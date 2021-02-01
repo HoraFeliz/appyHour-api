@@ -21,7 +21,7 @@ const placeSchema = new mongoose.Schema(
             }
         },
         icon: String,
-        international_phone_number: String,
+        formatted_phone_number: String,
         name: {
             type: String,
             required: [true, "Name is required"],
@@ -44,7 +44,10 @@ const placeSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
-        price_level: Number,
+        price_level: {
+          type: Number,
+          default : 0
+        },
         rating: Number,
         types: [String],
         url: String,
