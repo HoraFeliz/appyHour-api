@@ -1,74 +1,57 @@
 const mongoose = require("mongoose");
 
 const placeSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: [true, "Place title is required"],
-      trim: true,
+    {
+        address_components: {
+            locality: String,
+            country: String,
+            postal_code: String,
+        },
+        formatted_address: String,
+        geometry: {
+            location: {
+                lat: {
+                    type: Number,
+                    required: [true, "Latitude is required"],
+                },
+                lng: {
+                    type: Number,
+                    required: [true, "Longitude is required"],
+                }
+            }
+        },
+        icon: String,
+        international_phone_number: String,
+        name: {
+            type: String,
+            required: [true, "Name is required"],
+        },
+        opening_hours: {
+            weekday_text: {
+                type: [String],
+                default: "Sin horario"
+            }
+        },
+        photo: {
+            type: String,
+            default: "/img/default-img-tour.png",
+        },
+        place_id: {
+            type: String,
+            required: [true, "Place ID is required"],
+        },
+        recommended: {
+            type: Boolean,
+            default: false,
+        },
+        price_level: Number,
+        rating: Number,
+        types: [String],
+        url: String,
+        user_ratings_total: Number,
+        website: String,
     },
-    city: {
-      type: String,
-      trim: true,
-    },
-    address: {
-      type: String,
-    },
-    description: {
-      type: String,
-      trim: true,
-    },
-    url: {
-      type: String,
-      trim: true,
-    },
-    image: {
-      type: String,
-      default: "/img/default-img-tour.png",
-    },
-    // TO DO: Vamos a incluir creator en el place????
-    creator: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      //required: true,
-    },
-    openingHours: {
-      type: [String],
-      default : "Sin horario"
-    },
-
-    city: {
-      type: String,
-      trim: true,
-      //required: true,
-    },
-    location: {
-      type: { type: String },
-      coordinates: [Number],
-    },
-    geometry: {
-      longitude: String,
-      latitude: String,
-    },
-    recommended: {
-      type: Boolean,
-      default: false,
-    },
-    placeId: {
-      type: String,
-    },
-    googleId: {
-      type: String,
-    },
-    googleId: {
-      type: String,
-    },
-    openingHours: [String],
-    tags: [String],
-    rating: Number,
-    priceLevel: Number,
-  },
-  { timestamps: true }
+    { timestamps: true },
 );
 
 const Place = mongoose.model("Place", placeSchema);

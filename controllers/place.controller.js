@@ -1,4 +1,4 @@
-const Place = require("../models/place.model");
+const Place = require("../models/place.model.js.bk");
 const Tour = require("../models/tour.model");
 const User = require("../models/user.model");
 

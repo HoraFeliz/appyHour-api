@@ -46,7 +46,15 @@ const tourSchema = new mongoose.Schema(
     travel: [{
       time: String,
       distance: String
-    }]
+    }],
+    startpoint: {
+      geometry: {
+        location: {
+          lat: Number,
+          lng: Number,
+        }
+      }
+    }
   },
   {
     toJSON: { virtuals: true },

@@ -1,0 +1,322 @@
+{
+    "html_attributions": [],
+    "result": {
+        "address_components": [
+            {
+                "long_name": "1",
+                "short_name": "1",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Calle de Embajadores",
+                "short_name": "Calle de Embajadores",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Madrid",
+                "short_name": "Madrid",
+                "types": [
+                    "   ",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Madrid",
+                "short_name": "M",
+                "types": [
+                    "administrative_area_level_2",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Comunidad de Madrid",
+                "short_name": "Comunidad de Madrid",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Spain",
+                "short_name": "ES",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "28012",
+                "short_name": "28012",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Calle de Embajadores, 1</span>, <span class=\"postal-code\">28012</span> <span class=\"locality\">Madrid</span>, <span class=\"country-name\">Spain</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Calle de Embajadores, 1, 28012 Madrid, Spain",
+        "formatted_phone_number": "910 33 30 41",
+        "geometry": {
+            "location": {
+                "lat": 40.4106789,
+                "lng": -3.7067981
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 40.4119999302915,
+                    "lng": -3.705490869708498
+                },
+                "southwest": {
+                    "lat": 40.40930196970851,
+                    "lng": -3.708188830291502
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+        "international_phone_number": "+34 910 33 30 41",
+        "name": "La Lata Cascorro",
+        "opening_hours": {
+            "open_now": true,
+            "periods": [
+                {
+                    "close": {
+                        "day": 0,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 0,
+                        "time": "1200"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 1,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 1,
+                        "time": "1400"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 2,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 2,
+                        "time": "1400"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 3,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 3,
+                        "time": "1400"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 4,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 4,
+                        "time": "1400"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 5,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 5,
+                        "time": "1400"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "1300"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 2:00 – 9:00 PM",
+                "Tuesday: 2:00 – 9:00 PM",
+                "Wednesday: 2:00 – 9:00 PM",
+                "Thursday: 2:00 – 9:00 PM",
+                "Friday: 2:00 – 9:00 PM",
+                "Saturday: 1:00 – 9:00 PM",
+                "Sunday: 12:00 – 9:00 PM"
+            ]
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114684460964338995885\">La Lata Cascorro</a>"
+                ],
+                "photo_reference": "ATtYBwLZhR_nXqv6m3ct7KAUYGkiAMk1PiwkaVqKNqQlSohfBpsNTidb-AwYoiBDwm9AvCS4jE_eHJ68FAaoWN4hnm-tCzi5Uj-srZYXwRBKKm2Dd44dn6c_Bx8_Dvz2FTLAd_Qk3sMavq_2sWgBJI4BQ3pPezpe-DCYE0l_Aj5stzVZNZ--",
+                "width": 3611
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114684460964338995885\">La Lata Cascorro</a>"
+                ],
+                "photo_reference": "ATtYBwI5dA5xTfnHpFIMShsV45_6te2VtBGobxjoiS1pW_M9VnP1DyEwATaWLEKekfyeJuba-cnYQmbNLEvTxqjluPMMtoUbl1m9QafQkb-wHKV16twTn8qIY-RFyjEMqj0jeg4Qvc3hcf326v5YKDAqAxsUsrr327X8V3xnBAPQsaQQoY-L",
+                "width": 4032
+            },
+            {
+                "height": 1080,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100637193174172508116\">Alfonso R.</a>"
+                ],
+                "photo_reference": "ATtYBwL7FzU4eWHWC7mGQR_ZYYOY8xilwWef9AnJ3Xj0uZeRPg2vVNOjY-VjDrxI0aTNV13wyMI8x-PDsSHyA2emutkU3spghUMm-w31IFEBLHQQYzx8aTDUG32V5oadmNIBRb1rfeqYTCZEexV_wWusGlLEQXrYNUF9quONMjU7sevxu4yP",
+                "width": 1920
+            },
+            {
+                "height": 3456,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112650861186708436988\">Pedro Ortegon</a>"
+                ],
+                "photo_reference": "ATtYBwKcIpFs1w_cAcD7uEk_83rEfQk3SQjvCYAVR54Hw6olNPBrQedPWXRTtNlVs19Z9BJsNHKqcTlMhBS5-cQA_MLeWugSkx18-MTm2k4UETvD860qgDn2EdFlrOurUci4ARXh18LulreixagFeZ5UlufMcyD1dOB6apF1rv_tieAJqps3",
+                "width": 4608
+            },
+            {
+                "height": 1512,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114684460964338995885\">La Lata Cascorro</a>"
+                ],
+                "photo_reference": "ATtYBwK5JOkMqUVfiQteTsl5h-29SImujh5RXwvJl3ZLHMzqDaWixtVAphu2_-_svDdNom0zbbKVvXn8LGr1g6czkYrR8z13YE71lZHpGhh3GivT5Yxsd20yo1FUP8nutky9KBWi7Gqipc1s5z7PyHq_gPRlEJgACgOefDfwPHgS3J6F2cws",
+                "width": 2016
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112340698745162818100\">Victor</a>"
+                ],
+                "photo_reference": "ATtYBwLAjfRSZzdlCtxYdkjpg2Ef_eV1Ktotx-uASZF1I0oP0qmE9PyHxTgPUMkiGV0DuDwCN-TFFeqUEcZJ6JdxwhfT0G_tiynLGCwxv1T2uirHR7S5IpmE4UrUrF1KeBbnmCrPdvi3IfgDruRVPWAIOaqy_04cc57rM9w9imeO0A4SkY6g",
+                "width": 4032
+            },
+            {
+                "height": 4618,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110927770621242499715\">Myra Arthur</a>"
+                ],
+                "photo_reference": "ATtYBwLZsc_DNBuhI3cz1cILtfcTsIeS6AqqFbhfeHfNfj0GR9kvYXLF_9qBwlMcEWOcjbT0KgksrMlJ33dRhP39-64aqppqCQ6Ih-ANmSytGenkzN1_AdR15I70XW-023yBC6wTkR3qAFI8EHX2c0oINqYiC1522hjvgXa7HJknrc83f9DT",
+                "width": 3464
+            },
+            {
+                "height": 2268,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/117885490517861538573\">Alberto Espinosa</a>"
+                ],
+                "photo_reference": "ATtYBwLj2LRvf6SUyB308N-VYKBYBMxD9KaEhnvKBB8CFWAQgFC5GdStLhZTyDgRb3fJp67TmDwIUBhBn9M2NdlXL4cia4vw2XFpTSPgtOGjUrNiZ6ayJ5m_6W1k_cchdEuH6cxmHStGpkEXSpj-MbT2yeVVLSFPRxPTpBha8-YcxwedxA-q",
+                "width": 4032
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114684460964338995885\">La Lata Cascorro</a>"
+                ],
+                "photo_reference": "ATtYBwK_1xumOiyGJBLkVOjgCa7s76g2d0z-u7ctb6p0emMqZQnkKCQDi9DzTvNgDG82--HtSjsv7fR-XegnOo3ldFVBBWFsBiedbGOGrmx3h5qjGmD2kTNtEOkgl6WmgkNkpp0KdZltqkJKlmMNJPdirNMvQ6U2F1t3MNgORa74CC5gX2QC",
+                "width": 4032
+            },
+            {
+                "height": 1441,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114684460964338995885\">La Lata Cascorro</a>"
+                ],
+                "photo_reference": "ATtYBwLLRg0eCjxWxhbwLq0MZ3n4FDDdpJbKfbj191AiwXXmhHEJEuotL0H5WnDGTFXQuMJ56-Gb7ZZzCeZFceYVKlTZHHIYAE0FA8w5Z8QrhxrAuQaKTpV3ldH-_zuoa72WE1CVlt7VMBfjHDgqxuTIP72QCUTAyX62-I2wRMoxW1inSQP8",
+                "width": 1440
+            }
+        ],
+        "place_id": "ChIJG_srxNUnQg0R-oRzB3REPmU",
+        "plus_code": {
+            "compound_code": "C76V+77 Madrid, Spain",
+            "global_code": "8CGRC76V+77"
+        },
+        "price_level": 1,
+        "rating": 4.3,
+        "reference": "ChIJG_srxNUnQg0R-oRzB3REPmU",
+        "reviews": [
+            {
+                "author_name": "Iliya Rusev",
+                "author_url": "https://www.google.com/maps/contrib/105213813898046725415/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14Gid0Wl6kXJvmtbyvQmZfzI5OqHUYbTdUpSHE-TA=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "12 months ago",
+                "text": "I rarely visit one bar twice when I am on trip but this place won me over with it`s wonderful sangria and casual atmosphere. The staff is very polite too.",
+                "time": 1580903216
+            },
+            {
+                "author_name": "Kabir Patel",
+                "author_url": "https://www.google.com/maps/contrib/118321403324646980491/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh5.googleusercontent.com/-DTlpKkyY9zo/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmNcdKTz235v1Bk75pmH8Dk3VmE_g/s128-c0x00000000-cc-rp-mo-ba4/photo.jpg",
+                "rating": 5,
+                "relative_time_description": "a month ago",
+                "text": "Good drinks and food",
+                "time": 1607423277
+            },
+            {
+                "author_name": "Eva Hurtado del Casar",
+                "author_url": "https://www.google.com/maps/contrib/107736147992569435881/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh5.googleusercontent.com/-JkzhGPqtbPc/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnZtqNblnFdKMckXZYlrcoVI2AOXw/s128-c0x00000000-cc-rp-mo/photo.jpg",
+                "rating": 5,
+                "relative_time_description": "2 years ago",
+                "text": "The best bar you can find in Madrid so far.  Nice people,  great food,  great music. I've never seen anything like this.  200% recommended :)",
+                "time": 1542406088
+            },
+            {
+                "author_name": "Roni Tal",
+                "author_url": "https://www.google.com/maps/contrib/114056303655953453891/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14Gg9QqR7j1LeRHncfqNgOADRug8MauT2ctPB3r5msw=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 4,
+                "relative_time_description": "a year ago",
+                "text": "Cool place,LGBT friendly, alternative staff, good beer. I liked it alot",
+                "time": 1562711259
+            },
+            {
+                "author_name": "Rebecca Richards",
+                "author_url": "https://www.google.com/maps/contrib/107427659840755648761/reviews",
+                "language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14GiGLxJ2Un9PcWd7PCgxKKSiMFVCxLS4gRt6OvYmAg=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "2 years ago",
+                "text": "Great good and indie vibe they coped well with our poor Spanish and we enjoyed the food and drinks very much. Cocktails good. Very close to El  Rastro market on a Sunday good lunch spot",
+                "time": 1540803256
+            }
+        ],
+        "types": [
+            "bar",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=7295343711518688506",
+        "user_ratings_total": 570,
+        "utc_offset": 60,
+        "vicinity": "Calle de Embajadores, 1, Madrid",
+        "website": "http://latacascorro.com/"
+    },
+    "status": "OK"
+}
