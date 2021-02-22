@@ -21,7 +21,7 @@ module.exports.save = (req, res, next) => {
       });
       Tour.findByIdAndUpdate(
         tourId,
-        { $set: { image: p.image } },
+        { $set: { image: p.photo } },
         { runValidators: true, new: true, useFindAndModify: false }
       ).then((tour) => {
         console.log("tour", tour);

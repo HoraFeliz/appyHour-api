@@ -45,8 +45,8 @@ const placeSchema = new mongoose.Schema(
             default: false,
         },
         price_level: {
-          type: Number,
-          default : 0
+            type: Number,
+            default: 0,
         },
         rating: Number,
         types: [String],
