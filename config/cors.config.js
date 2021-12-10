@@ -2,8 +2,9 @@ const cors = require("cors");
 
 const corsMiddleware = cors({
   origin: "*",
+  
  // allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
+  credentials: false,
 });
 
 module.exports = corsMiddleware;
